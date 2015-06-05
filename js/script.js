@@ -37,6 +37,15 @@ Pizza.prototype.addTopping = function(toppingName) {
   this.price += 0.50;
 };
 
+Pizza.prototype.removeTopping = function(toppingName) {
+  "use strict";
+  var found = this.toppings.indexOf(toppingName);
+  if (found >= 0) {
+    this.toppings.splice(found, 1);
+    this.price -= 0.50;
+  }
+};
+
 //update the toppings panel
 var updateToppingPanel = function(pizza) {
   "use strict";

@@ -37,6 +37,13 @@ describe("pizza", function() {
       pizza1.addTopping("ham");
       expect(pizza1.price).to.equal(16.00);
     });
+    it("decreases in price as toppings are removed", function() {
+      var pizza1 = new Pizza("large");
+      pizza1.addTopping("mushroom");
+      pizza1.addTopping("ham");
+      pizza1.removeTopping("mushroom");
+      expect(pizza1.price).to.equal(15.50);
+    });
   });
   describe("toppings", function() {
     it("has toppings", function() {
@@ -48,6 +55,13 @@ describe("pizza", function() {
       pizza1.addTopping("mushroom");
       pizza1.addTopping("ham");
       expect(pizza1.toppings).to.eql(["mushroom", "ham"]);
+    });
+    it("can remove toppings", function() {
+      var pizza1 = new Pizza("large");
+      pizza1.addTopping("mushroom");
+      pizza1.addTopping("ham");
+      pizza1.removeTopping("mushroom");
+      expect(pizza1.toppings).to.eql(["ham"]);
     });
   });
 });
