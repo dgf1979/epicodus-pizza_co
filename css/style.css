@@ -47,3 +47,11 @@ div.step h3 {
   font-size: 2em;
   margin-top: 4px;
 }
+
+div.price-bar {
+  text-align: center;
+  font-style: italic;
+  color: white;
+  background-color: darkgreen;
+  width: 100%;
+}
