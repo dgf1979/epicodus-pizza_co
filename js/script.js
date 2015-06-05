@@ -71,8 +71,14 @@ $( document ).ready(function() {
   });
 
   // update pizza cost when toppings are added
-  $("input").checked(function () {
-    // todo
+  $("table#toppings input:checkbox").change(function () {
+    var pizza = ORDER.items[ORDER.items.length - 1];
+    if ($(this).is(":checked")) {
+      pizza.addTopping($(this).val());
+    } else {
+      pizza.removeTopping($(this).val());
+    }
+    updateToppingPanel(pizza);
   });
 
   // add customized pizza
