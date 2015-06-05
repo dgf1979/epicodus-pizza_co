@@ -1,7 +1,7 @@
 //raw js
-var foo = function(bar) {
+var Pizza = function() {
   "use strict";
-  return false;
+  this.toppings = [];
 };
 
 

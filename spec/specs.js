@@ -1,6 +1,10 @@
-describe("foo", function() {
+describe("pizza", function() {
   "use strict";
-  it("is some function or expectation", function() {
-    expect(foo("bar")).to.equal(false);
+
+  describe("toppings", function() {
+    it("has toppings", function() {
+      var pizza = new Pizza();
+      expect(pizza.toppings).to.eql([]);
+    });
   });
 });
