@@ -37,8 +37,37 @@ Pizza.prototype.addTopping = function(toppingName) {
   this.price += 0.50;
 };
 
+//update the toppings panel
+var updateToppingPanel = function(pizza) {
+  "use strict";
+  $("div#price-with-toppings").text("Price: $" + pizza.price);
+};
 
 //jQuery
 $( document ).ready(function() {
   "use strict";
+
+  var ORDER = new Order();
+  $("div#topping-panel").hide();
+  $("div#checkout-panel").hide();
+
+  // add a pizza
+  $("span#add-to-order").click(function() {
+    var pizza = new Pizza($("select#select-size").val());
+    ORDER.items.push(pizza);
+    //close the new pizza panel, open the toppings panel
+    $("div#topping-panel").show();
+    $("div#size-panel").hide();
+    updateToppingPanel(pizza);
+  });
+
+  // update pizza cost when toppings are added
+  $("input").checked(function () {
+    // todo
+  });
+
+  // add customized pizza
+  $("span#submit-to-order").click(function() {
+    // todo
+  });
 });
