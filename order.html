@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" href="css/lib/normalize.css" />
+    <link rel="stylesheet" href="css/lib/bootstrap.css" />
     <link rel="stylesheet" href="css/style.css" />
 
     <script src='js/lib/jquery-1.11.3.js'></script>
@@ -11,6 +11,81 @@
 
   </head>
   <body>
-
+    <div class="container">
+      <div class="row">
+        <header>
+          <h2>Place an order..</h2>
+        </header>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="well">
+            <div class="step">
+              <h3>1..</h3>
+              <p>
+                Select the size of pizza you'd like to add to your order
+              </p>
+            </div>
+            <div class="actions">
+              <label for="select-size">-Size-</label>
+              <br>
+              <select id="select-size">
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+              </select>
+              <span id="add-to-order" class="btn btn-primary">Add and Customize Toppings</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="well">
+            <div class="step">
+              <h3>2..</h3>
+              <p>
+                Customize your toppings and click 'add to order'
+              </p>
+            </div>
+            <div class="actions">
+              <table id="toppings">
+                <tr>
+                  <td>Pepperoni</td>
+                  <td><input type="checkbox" value="Pepperoni"></td>
+                </tr>
+                <tr>
+                  <td>Mushrooms</td>
+                  <td><input type="checkbox" value="Mushrooms"></td>
+                </tr>
+                <tr>
+                  <td>Black Olives</td>
+                  <td><input type="checkbox" value="Mushrooms"></td>
+                </tr>
+              </table>
+              <span id="submit-to-order" class="btn btn-primary">Add to Order</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="well">
+            <div class="step">
+              <h3>3..</h3>
+              <p>
+                Add another pizza, or click 'Place Order' to finish
+              </p>
+            </div>
+            <div class="actions">
+              <div id="orders">
+                
+              </div>
+              <span id="place-order" class="btn btn-primary">Place Order</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <footer>
+        </footer>
+      </div>
+    </div>
   </body>
 </html>

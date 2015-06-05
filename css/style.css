@@ -2,3 +2,48 @@
   background-color: black;
   color: white;
 }
+
+div.actions {
+  text-align: center;
+  border-style: solid;
+  border-color: silver;
+  border-radius: 2px;
+  border-width: 1px;
+  padding: 1em;
+}
+
+div.actions select {
+  font-weight: bold;
+  font-size: 1.2em;
+  width: 90%;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+table#toppings td:nth-child(1) {
+  width: 60%;
+  text-align: right;
+  padding-left: 1em;
+  padding-right: 1em;
+  font-weight: bold;
+}
+
+table#toppings td:nth-child(2) {
+  text-align: left;
+}
+
+table#toppings {
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+div.step {
+  font-weight: bold;
+  font-style: italic;
+  text-align: center;
+}
+
+div.step h3 {
+  font-size: 2em;
+  margin-top: 4px;
+}
