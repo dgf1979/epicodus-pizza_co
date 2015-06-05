@@ -65,18 +65,20 @@ var updateToppingPanel = function(pizza) {
 //update orders panel
 var updateCheckoutPanel = function(order) {
   "use strict";
-  var orderPanel = $("div#order");
-  orderPanel.empty();
+  var orderTable = $("table#order-items");
+  orderTable.empty();
   order.items.forEach(function (pizza) {
     var rowHTML = "<tr>" +
     "<td>" +
-      "<div>" + pizza.size.toUpperCase() + " " + pizza.toppings.length + "-item</div>" +
-      "<div class='order-toppings'>" + pizza.toppings.join(", ") + "</div>" +
+      "<div class='left-text'>" + pizza.size.toUpperCase() + " " + pizza.toppings.length + "-item</div>" +
+      "<div class='order-toppings left-text'>" + pizza.toppings.join(", ") + "</div>" +
     "</td>" +
     "<td>" + pizza.priceFormatted() + "</td>" +
     "</tr>";
-    orderPanel.append(rowHTML);
+    orderTable.append(rowHTML);
   });
+  orderTable.append("<tr></tr>");
+  orderTable.append("<tr class='grand-total'><td>TOTAL:</td><td>" + order.totalFormatted() + "</td></tr>");
 };
 
 //jQuery
@@ -84,8 +86,6 @@ $( document ).ready(function() {
   "use strict";
 
   var ORDER = new Order();
-  $("div#topping-panel").hide();
-  $("div#checkout-panel").hide();
 
   // add a pizza
   $("span#add-to-order").click(function() {

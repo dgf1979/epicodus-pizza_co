@@ -1,6 +1,21 @@
-#jqtest {
-  background-color: black;
-  color: white;
+tr {
+  margin-top: 2px;
+}
+
+div#topping-panel {
+  display: none;
+}
+
+div#checkout-panel {
+  display: none;
+}
+
+div.left-text {
+  text-align: left;
+}
+
+div.fullwidth {
+  width: 100%;
 }
 
 div.actions {
@@ -20,6 +35,11 @@ div.actions select {
   text-align: center;
 }
 
+table {
+  width: 100%;
+  margin-bottom: 1em;
+}
+
 table#toppings td:nth-child(1) {
   width: 60%;
   text-align: right;
@@ -32,9 +52,25 @@ table#toppings td:nth-child(2) {
   text-align: left;
 }
 
-table#toppings {
-  width: 100%;
-  margin-bottom: 1em;
+tr.grand-total td {
+  text-align: right !important;
+}
+
+table#order-items td:nth-child(1) {
+  text-align: left;
+  font-weight: bold;
+}
+
+table#order-items td:nth-child(2) {
+  text-align: right;
+}
+
+tr.grand-total {
+  font-weight: bold;
+  font-size: 1.4em;
+  color: white;
+  background-color: green;
+  margin: 0.4em;
 }
 
 div.step {
@@ -54,4 +90,8 @@ div.price-bar {
   color: white;
   background-color: darkgreen;
   width: 100%;
+}
+
+div.order-toppings {
+  font-size: 0.8em;
 }
