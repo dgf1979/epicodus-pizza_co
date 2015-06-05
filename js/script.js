@@ -13,6 +13,11 @@ Order.prototype.total = function() {
   return total;
 };
 
+Order.prototype.totalFormatted = function() {
+  "use strict";
+  return "$" + this.total().toFixed(2);
+};
+
 // pizza object
 var Pizza = function(size) {
   "use strict";
@@ -31,6 +36,11 @@ var Pizza = function(size) {
   }
 };
 
+Pizza.prototype.priceFormatted = function() {
+  "use strict";
+  return "$" + this.price.toFixed(2);
+};
+
 Pizza.prototype.addTopping = function(toppingName) {
   "use strict";
   this.toppings.push(toppingName);
@@ -45,6 +55,8 @@ Pizza.prototype.removeTopping = function(toppingName) {
     this.price -= 0.50;
   }
 };
+
+
 
 //update the toppings panel
 var updateToppingPanel = function(pizza) {
