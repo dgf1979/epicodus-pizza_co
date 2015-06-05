@@ -1,7 +1,13 @@
 //raw js
-var Pizza = function() {
+var Pizza = function(size) {
   "use strict";
   this.toppings = [];
+  this.size = size;
+};
+
+Pizza.prototype.addTopping = function(toppingName) {
+  "use strict";
+  this.toppings.push(toppingName);
 };
 
 
