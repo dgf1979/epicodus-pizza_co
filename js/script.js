@@ -56,12 +56,27 @@ Pizza.prototype.removeTopping = function(toppingName) {
   }
 };
 
-
-
 //update the toppings panel
 var updateToppingPanel = function(pizza) {
   "use strict";
-  $("div#price-with-toppings").text("Price: $" + pizza.price);
+  $("div#price-with-toppings").text("Price: " + pizza.priceFormatted());
+};
+
+//update orders panel
+var updateCheckoutPanel = function(order) {
+  "use strict";
+  var orderPanel = $("div#order");
+  orderPanel.empty();
+  order.items.forEach(function (pizza) {
+    var rowHTML = "<tr>" +
+    "<td>" +
+      "<div>" + pizza.size.toUpperCase() + " " + pizza.toppings.length + "-item</div>" +
+      "<div class='order-toppings'>" + pizza.toppings.join(", ") + "</div>" +
+    "</td>" +
+    "<td>" + pizza.priceFormatted() + "</td>" +
+    "</tr>";
+    orderPanel.append(rowHTML);
+  });
 };
 
 //jQuery
@@ -76,7 +91,9 @@ $( document ).ready(function() {
   $("span#add-to-order").click(function() {
     var pizza = new Pizza($("select#select-size").val());
     ORDER.items.push(pizza);
-    //close the new pizza panel, open the toppings panel
+    // clear any checked checkboxes in the toppings panel
+    $("table#toppings input:checkbox").prop("checked", false);
+    // close the new pizza panel, open the toppings panel
     $("div#topping-panel").show();
     $("div#size-panel").hide();
     updateToppingPanel(pizza);
@@ -93,8 +110,11 @@ $( document ).ready(function() {
     updateToppingPanel(pizza);
   });
 
-  // add customized pizza
+  // add customized pizza to order pane
   $("span#submit-to-order").click(function() {
-    // todo
+    //close the toppings panel, open the checkout panel
+    updateCheckoutPanel(ORDER);
+    $("div#checkout-panel").show();
+    $("div#topping-panel").hide();
   });
 });
