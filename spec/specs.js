@@ -1,3 +1,23 @@
+describe("order", function() {
+  "use strict";
+  it("contains a number of items", function() {
+    var order = new Order();
+    var pizza1 = new Pizza("large");
+    var pizza2 = new Pizza("small");
+    order.items.push(pizza1);
+    order.items.push(pizza2);
+    expect(order.items).to.eql([pizza1, pizza2]);
+  });
+  it("calculates the total price of all items", function() {
+    var order = new Order();
+    var pizza1 = new Pizza("large");
+    var pizza2 = new Pizza("small");
+    order.items.push(pizza1);
+    order.items.push(pizza2);
+    expect(order.total()).to.equal(25.00);
+  });
+});
+
 describe("pizza", function() {
   "use strict";
   describe("size", function() {

@@ -1,3 +1,18 @@
+// order object
+var Order = function() {
+  "use strict";
+  this.items = [];
+};
+
+Order.prototype.total = function() {
+  "use strict";
+  var total = 0;
+  this.items.forEach(function (item) {
+    total += item.price;
+  });
+  return total;
+};
+
 // pizza object
 var Pizza = function(size) {
   "use strict";
@@ -6,6 +21,12 @@ var Pizza = function(size) {
   switch(size) {
     case "large":
       this.price = 15.00;
+      break;
+    case "medium":
+      this.price = 12.00;
+      break;
+    case "small":
+      this.price = 10.00;
       break;
   }
 };
@@ -20,7 +41,4 @@ Pizza.prototype.addTopping = function(toppingName) {
 //jQuery
 $( document ).ready(function() {
   "use strict";
-    console.log( "jQuery Ready" );
-
-    $("#jqtest").text("jQuery Ready");
 });
