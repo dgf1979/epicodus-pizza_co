@@ -1,12 +1,12 @@
-## [APPNAME] ##
+## Order Pizza ##
 
 This application is meant to fulfill the requirements of an assignment through Epicodus code school. For more information on Epicodus, see <http://www.epicodus.com/>.
 
 ### Description ###
 
-[simple app description]
+simulates ordering pizzas online
 
-**Assignment:** [assignment title]
+**Assignment:** JavaScript OO Code Review
 
 **<https://www.learnhowtoprogram.com/table-of-contents>**
 
@@ -16,7 +16,7 @@ Andrew Finstrom
 
 ### Setup ###
 ```
-    setup code or details here
+    order.html
 ```
 
 ### License ###
