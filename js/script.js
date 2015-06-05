@@ -77,7 +77,7 @@ var updateCheckoutPanel = function(order) {
     "</tr>";
     orderTable.append(rowHTML);
   });
-  orderTable.append("<tr></tr>");
+  orderTable.append("<tr class='buffer'></tr>");
   orderTable.append("<tr class='grand-total'><td>TOTAL:</td><td>" + order.totalFormatted() + "</td></tr>");
 };
 
@@ -116,5 +116,19 @@ $( document ).ready(function() {
     updateCheckoutPanel(ORDER);
     $("div#checkout-panel").show();
     $("div#topping-panel").hide();
+    // show the add pizza button's panel
+    $("div#another-pizza-panel").show();
+  });
+
+  // add another pizza to the order
+  $("span#add-another").click(function() {
+    //re-open the size panel
+    $("div#size-panel").show();
+    // hide this button's panel
+    $("div#another-pizza-panel").hide();
+  });
+
+  $("span#place-order").click(function() {
+    alert("Sure- but I'm gonna need to see that " + ORDER.totalFormatted() + " first.");
   });
 });

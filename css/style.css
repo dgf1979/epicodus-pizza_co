@@ -33,6 +33,7 @@ div.actions select {
   width: 90%;
   margin-bottom: 1em;
   text-align: center;
+  padding-bottom: 8px;
 }
 
 table {
@@ -54,6 +55,13 @@ table#toppings td:nth-child(2) {
 
 tr.grand-total td {
   text-align: right !important;
+}
+
+tr.buffer {
+  height: 1em;
+  border-bottom-style: solid;
+  border-bottom-color: black;
+  border-bottom-width: 2px;
 }
 
 table#order-items td:nth-child(1) {
@@ -93,5 +101,10 @@ div.price-bar {
 }
 
 div.order-toppings {
-  font-size: 0.8em;
+  font-size: 0.6em;
+}
+
+.btn {
+  min-width: 80%
+  margin-top: 1em;
 }

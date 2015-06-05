@@ -21,7 +21,7 @@
         <div class="col-md-4" id="size-panel">
           <div class="well">
             <div class="step">
-              <h3>1..</h3>
+              <h3>First..</h3>
               <p>
                 Select the size of pizza you'd like to add to your order
               </p>
@@ -41,7 +41,7 @@
         <div class="col-md-4" id="topping-panel">
           <div class="well">
             <div class="step">
-              <h3>2..</h3>
+              <h3>Next..</h3>
               <p>
                 Customize your toppings and click 'add to order'
               </p>
@@ -61,6 +61,14 @@
                   <td>Black Olives</td>
                   <td><input type="checkbox" value="Black Olives"></td>
                 </tr>
+                <tr>
+                  <td>Green Peppers</td>
+                  <td><input type="checkbox" value="Green Peppers"></td>
+                </tr>
+                <tr>
+                  <td>Onion</td>
+                  <td><input type="checkbox" value="Onion"></td>
+                </tr>
               </table>
               <span id="submit-to-order" class="btn btn-primary">Add to Order</span>
             </div>
@@ -69,21 +77,19 @@
         <div class="col-md-4" id="checkout-panel">
           <div class="well">
             <div class="step fullwidth">
-              <h3>3..</h3>
+              <h3>Order</h3>
               <p>
                 Add another pizza, or click 'Place Order' to finish
               </p>
             </div>
             <div class="actions fullwidth">
               <div id="order" class="fullwidth">
-                <table id="order-items">
-
-                </table>
+                <table id="order-items"></table>
               </div>
-              <div id="order-total" class="fullwidth">
-
-              </div>
-              <span id="place-order" class="btn btn-primary">Place Order</span>
+              <span id="place-order" class="btn btn-success">Place Order</span>
+            </div>
+            <div id="another-pizza-panel" class="actions fullwidth">
+              <span id="add-another" class="btn btn-primary">Add Another Pizza</span>
             </div>
           </div>
         </div>
